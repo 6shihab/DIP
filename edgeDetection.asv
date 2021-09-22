@@ -1,0 +1,24 @@
+clc;
+clear all;
+close all;
+ 
+I=imread('coins.png');
+figure(1),
+subplot(231), imshow(I), title('Original image');
+ 
+BW1=edge(I, 'sobel');
+BW2=edge(I, 'canny');
+BW3=edge(I)
+ 
+subplot(232), imshow(BW1), title('Soble filter');
+subplot(233), imshow(BW2), title('Canny filter');
+ 
+I=imread('circuit.tif');
+subplot(234), imshow(I), title('Original image');
+ 
+BW1=edge(I, 'canny');
+BW2=edge(I, 'prewitt');
+
+ 
+subplot(235), imshow(BW1), title('canny filter');
+subplot(236), imshow(BW2), title('prewit filter');
